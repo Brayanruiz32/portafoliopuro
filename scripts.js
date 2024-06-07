@@ -27,4 +27,41 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem('theme', 'dark-mode');
         }
     });
+    
+    // Función para obtener los proyectos de GitHub
+    const getGitHubProjects = async () => {
+        const username = 'Brayanruiz32'; // Cambia esto a tu nombre de usuario de GitHub
+        const url = `https://api.github.com/users/${username}/repos?sort=created&per_page=6`;
+        try {
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const data = await response.json();
+            displayProjects(data);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    };
+
+    // Función para mostrar los proyectos en la página
+    const displayProjects = (projects) => {
+        const projectsContainer = document.getElementById('projects');
+        projects.forEach(project => {
+            const date = new Date(project.updated_at);
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, '0'); // Los meses son 0-11, por eso se suma 1
+            const day = String(date.getDate()).padStart(2, '0');
+            const projectElement = document.createElement('div');
+            projectElement.classList.add('project');
+            projectElement.innerHTML = `
+                <a href="${project.html_url}" target="_blank"><h3>${project.name}</h3>
+                <p>${project.description || 'No description available'}</p></a>
+            `;
+            projectsContainer.appendChild(projectElement);
+        });
+    };
+
+    // Llama a la función para obtener y mostrar los proyectos
+    getGitHubProjects();
 });

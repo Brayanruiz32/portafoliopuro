@@ -78,13 +78,34 @@ img{
 .seccion2{
     background-color: #6360600f;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-direction: column;
 }
 
 .description{
     width: 50%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-evenly; */
 }
+
+.description p{
+    text-align: justify;
+}
+
+.skills{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 5vh;
+}
+
+
+.skills img{
+    width: 10%;
+}
+
+
 
 /* Estilos seccion 3 */
 .seccion3{
@@ -110,10 +131,26 @@ img{
 /* Estilos seccion 4 */
 .seccion4{
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: space-evenly;
+}
+#projects{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+    justify-content: space-evenly;
+    width:100%;
+    row-gap: 10vh;
 }
 
+.project{
+    width: 100%; 
+    border: 1px solid white;
+    text-align: center;
+}
+.project a{
+    text-decoration: none;
+}
 
 
 /* Animaciones */
