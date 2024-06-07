@@ -1,0 +1,65 @@
+/* styles.css */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    display: flex;
+    padding: 1rem;
+    background-color: #f1f1f1;
+    flex-direction: row-reverse;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+/* Tema claro (por defecto) */
+body.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+header.light-mode {
+    background-color: #f1f1f1;
+}
+
+/* Tema oscuro */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+header.dark-mode {
+    background-color: #1e1e1e;
+}
+
+/* Estilos del titulo */
+.my-name {
+    width: 20%;
+    animation: animacion 1.5s steps(25), transparent .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #fff;
+    border-right: 3px solid;
+}
+
+@keyframes animacion {
+    from {
+        width: 0px
+    }
+}
+
+@keyframes transparent {
+    50% {
+        border-color: transparent
+    }
+}
