@@ -10,6 +10,12 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
+.container{
+    display: grid;
+}
+
+/* estilos del header */
+
 header {
     display: flex;
     padding: 1rem;
@@ -43,13 +49,24 @@ header.dark-mode {
 }
 
 /* Estilos del titulo */
+section{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 10px;
+}
+
 .my-name {
-    width: 20%;
+    width: 100%;
     animation: animacion 1.5s steps(25), transparent .5s step-end infinite alternate;
     white-space: nowrap;
     overflow: hidden;
     color: #fff;
     border-right: 3px solid;
+}
+
+img{
+    width: 25%;
 }
 
 @keyframes animacion {
@@ -62,4 +79,9 @@ header.dark-mode {
     50% {
         border-color: transparent
     }
+}
+
+/*foto de perfil*/
+.photo img{
+    width: 20%;
 }
