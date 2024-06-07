@@ -38,6 +38,7 @@ header.light-mode {
     background-color: #f1f1f1;
 }
 
+
 /* Tema oscuro */
 body.dark-mode {
     background-color: #121212;
@@ -48,20 +49,24 @@ header.dark-mode {
     background-color: #1e1e1e;
 }
 
-/* Estilos del titulo */
+/* Estilos de las secciones */
 section{
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    padding-top: 10px;
+    width: 100%;
+    height: 100vh;
 }
 
+/* Estilos seccion 1 */
+.seccion1{
+    background-color: #908d8d0f;
+    justify-content: space-evenly;
+    align-items: center;
+}
 .my-name {
     width: 100%;
     animation: animacion 1.5s steps(25), transparent .5s step-end infinite alternate;
     white-space: nowrap;
     overflow: hidden;
-    color: #fff;
     border-right: 3px solid;
 }
 
@@ -69,6 +74,49 @@ img{
     width: 25%;
 }
 
+/* Estilos seccion 2 */
+.seccion2{
+    background-color: #6360600f;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.description{
+    width: 50%;
+}
+
+/* Estilos seccion 3 */
+.seccion3{
+    background-color: #2423230f;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.techs{
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: auto auto auto auto ;
+    row-gap: 10vh;
+    width: 70%;
+    text-align: center;
+}
+
+.tech-icon img{
+    width: 100px;
+}
+
+
+/* Estilos seccion 4 */
+.seccion4{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* Animaciones */
 @keyframes animacion {
     from {
         width: 0px
@@ -81,7 +129,4 @@ img{
     }
 }
 
-/*foto de perfil*/
-.photo img{
-    width: 20%;
-}
+
