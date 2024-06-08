@@ -19,12 +19,15 @@ document.addEventListener('DOMContentLoaded', () => {
             header.classList.remove('dark-mode');
             header.classList.add('light-mode');
             localStorage.setItem('theme', 'light-mode');
+            toggleButton.src="/moon.png";
         } else {
             body.classList.remove('light-mode');
             body.classList.add('dark-mode');
             header.classList.remove('light-mode');
             header.classList.add('dark-mode');
             localStorage.setItem('theme', 'dark-mode');
+            
+            toggleButton.src= "/sun.png";
         }
     });
     
@@ -64,4 +67,47 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Llama a la función para obtener y mostrar los proyectos
     getGitHubProjects();
+
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            console.log(entry);
+            if(entry.isIntersecting){
+                entry.target.classList.add("show")
+            }else{
+                entry.target.classList.remove("show")
+            }
+        })
+    })
+
+    const hidden = document.querySelectorAll(".hidden");
+
+    hidden.forEach((el) => observer.observe(el))
+
+
+
+
+    const observador = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            console.log(entry);
+            if(entry.isIntersecting){
+                entry.target.classList.add("mostrar")
+            }else{
+                entry.target.classList.remove("mostrar")
+            }
+        })
+    })
+
+    const escondido = document.querySelectorAll(".escondido");
+
+    escondido.forEach((el) => observador.observe(el))
+
+
+
+
+
+
+
+
+
 });
